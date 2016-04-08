@@ -1,0 +1,5 @@
+<svg width="300px" height="300px" viewBox="0 0 1604 1604"
+     xmlns="http://www.w3.org/2000/svg">
+  <path d="M 0 0 L 0 400 L 400 400 L 400 0 z" fill="pink" stroke="red" stroke-width="3" />
+  <path d="M 100 100 L 300 100 L 200 300 z" fill="orange" stroke="black" stroke-width="3" />
+</svg>
