@@ -1,7 +1,7 @@
 'use strict'
 
 function transformation (M, dim) {
-  return function (pt) {
+  function transformPoint (pt) {
     var res = Array(dim).fill(0)
 
     for (let j = 0; j < dim; j++) {
@@ -12,5 +12,8 @@ function transformation (M, dim) {
     }
     return res
   }
+  transformPoint.M = M;
+
+  return transformPoint;
 }
 module.exports = transformation
