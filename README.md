@@ -40,6 +40,12 @@ res = trn([1, 2])
 //> [ 5.999999999999998, 5.999999999999999 ]
 res = trn([1.5, 1.5])
 //> [ 6, 4 ]
+
+// to obtain the matrix in "Row echelon form" use `trn.M`
+var matrix = trn.M
+//> [ [ 1, 0, 0, 2, -2 ],
+//>   [ 0, 1, 0, 2,  2 ],
+//>   [ 0, 0, 1, 0,  4 ] ]
 ```
 
 ### Example
