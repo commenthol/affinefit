@@ -1,6 +1,6 @@
 {
   "name": "affinefit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Fit an affine transformation to given points",
   "main": "lib/affineFit.js",
   "author": "commenthol <commenthol@gmail.com>",
