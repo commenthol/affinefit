@@ -1,3 +1,5 @@
+/* eslint no-multi-spaces:0 */
+
 'use strict'
 
 var fs = require('fs')
@@ -11,7 +13,7 @@ var toPts   = [[4, 4], [6, 6], [8, 4], [6, 2]]  // scaled x 2, rotated 45 degree
 var trn = affineFit(fromPts, toPts) // affine transformation
 
 function transform (svg) {
-  svg = svg.replace(/(<path d=")([^"]*)(".*?\>)/g, function (m, m1, m2, m3) {
+  svg = svg.replace(/(<path d=")([^"]*)(".*?>)/g, function (m, m1, m2, m3) {
     m2 = m2.replace(/([ML]) (\d+) (\d+)/g, function (m, m1, m2, m3) {
       var res = trn([parseInt(m2, 10), parseInt(m3, 10)]).map((f) => {
         return Math.round(f)
