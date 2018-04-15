@@ -1,19 +1,19 @@
 'use strict'
 
-/*
-   Puts given matrix (2D array) into the Reduced Row Echelon Form.
-   Returns True if successful, False if 'm' is singular.
-   NOTE: make sure all the matrix items support fractions! Int matrix will NOT work!
-   Written by Jarno Elonen in April 2005, released into Public Domain
-
-   Ultra simple linear system solver. Replace this if you need speed.
-*/
+/**
+ * Puts given matrix (2D array) into the Reduced Row Echelon Form.
+ * Returns True if successful, False if 'm' is singular.
+ * NOTE: make sure all the matrix items support fractions! Int matrix will NOT work!
+ * Written by Jarno Elonen in April 2005, released into Public Domain
+ *
+ * Ultra simple linear system solver. Replace this if you need speed.
+ */
 function gaussJordan (m) {
-  var eps = 1e-10 // 1.0 / Math.pow(10, 10)
+  const eps = 1e-10 // 1.0 / Math.pow(10, 10)
 
-  var h = m.length
-  var w = m[0].length
-  var c
+  const h = m.length
+  const w = m[0].length
+  let c
 
   for (let y = 0; y < h; y++) {
     let maxrow = y

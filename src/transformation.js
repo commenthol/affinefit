@@ -2,7 +2,7 @@
 
 function transformation (M, dim) {
   function transformPoint (pt) {
-    var res = Array(dim).fill(0)
+    const res = Array(dim).fill(0)
 
     for (let j = 0; j < dim; j++) {
       for (let i = 0; i < dim; i++) {

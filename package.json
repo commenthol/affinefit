@@ -1,41 +1,42 @@
 {
   "name": "affinefit",
-  "version": "1.0.3",
+  "version": "1.0.4-1",
   "description": "Fit an affine transformation to given points",
-  "main": "lib/affineFit.js",
-  "author": "commenthol <commenthol@gmail.com>",
-  "maintainers": "commenthol <commenthol@gmail.com>",
-  "license": "CC0-1.0",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-preset-es2015": "^6.22.0",
-    "eslint": "^3.13.1",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.2.0"
-  },
-  "scripts": {
-    "test": "mocha test/*.mocha.js",
-    "cover": "istanbul cover _mocha --report lcov --report text -- --reporter dot --check-leaks test/*.mocha.js",
-    "readme": "markedpp --githubid -i README.md -o README.md",
-    "lint": "eslint '**/*.js'",
-    "pack": "npm test && npm run lint && npm run readme && npm pack",
-    "babel": "babel --presets=es2015 -d lib/ src/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/commenthol/affinefit.git"
-  },
   "keywords": [
     "affine",
     "transformation"
   ],
+  "homepage": "https://github.com/commenthol/affinefit",
+  "bugs": {
+    "url": "https://github.com/commenthol/affinefit/issues"
+  },
+  "license": "CC0-1.0",
+  "author": "commenthol <commenthol@gmail.com>",
+  "main": "lib/affineFit.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/commenthol/affinefit.git"
+  },
+  "scripts": {
+    "all": "npm run clean && npm run lint && npm run build && npm test",
+    "build": "babel -d lib src",
+    "clean": "rimraf lib es coverage .nyc_output",
+    "clean:all": "rimraf node_modules && npm run clean",
+    "coverage": "nyc -r text -r html npm test",
+    "lint": "eslint '**/*.js'",
+    "prepublishOnly": "npm run all",
+    "readme": "markedpp --githubid -i README.md -o README.md",
+    "test": "mocha"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
   "eslintConfig": {
     "extends": "standard",
     "plugins": [
@@ -44,5 +45,26 @@
     "rules": {
       "no-multi-spaces": 0
     }
-  }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^5.1.0",
+    "nyc": "^11.6.0",
+    "rimraf": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "maintainers": [
+    "commenthol <commenthol@gmail.com>"
+  ]
 }

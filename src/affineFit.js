@@ -19,7 +19,7 @@ function affineFit (q, p) {
     return false
   }
 
-  var dim = q[0].length // num of dimensions
+  const dim = q[0].length // num of dimensions
 
   if (q.length < dim) {
     console.error('Too few points => under-determined system.')
@@ -27,7 +27,7 @@ function affineFit (q, p) {
   }
 
   // Make an empty (dim) x (dim+1) matrix and fill it
-  var c = emptyArray(dim, dim + 1)
+  const c = emptyArray(dim, dim + 1)
 
   for (let j = 0; j < dim; j++) {
     for (let k = 0; k < dim + 1; k++) {
@@ -39,7 +39,7 @@ function affineFit (q, p) {
   }
 
   // Make an empty (dim+1) x (dim+1) matrix and fill it
-  var Q = emptyArray(dim + 1, dim + 1)
+  const Q = emptyArray(dim + 1, dim + 1)
 
   q.forEach((qi) => {
     let qt = qi.concat(1)
@@ -51,7 +51,7 @@ function affineFit (q, p) {
   })
 
   // Augment Q with c and solve Q * a' = c by Gauss-Jordan
-  var M = Q.map((qi, idx) => {
+  const M = Q.map((qi, idx) => {
     return qi.concat(c[idx])
   })
 
