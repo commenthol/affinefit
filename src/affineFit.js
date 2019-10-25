@@ -32,7 +32,7 @@ function affineFit (q, p) {
   for (let j = 0; j < dim; j++) {
     for (let k = 0; k < dim + 1; k++) {
       for (let i = 0; i < q.length; i++) {
-        let qt = q[i].concat(1)
+        const qt = q[i].concat(1)
         c[k][j] += qt[k] * p[i][j]
       }
     }
@@ -42,7 +42,7 @@ function affineFit (q, p) {
   const Q = emptyArray(dim + 1, dim + 1)
 
   q.forEach((qi) => {
-    let qt = qi.concat(1)
+    const qt = qi.concat(1)
     for (let i = 0; i < dim + 1; i++) {
       for (let j = 0; j < dim + 1; j++) {
         Q[i][j] += qt[i] * qt[j]

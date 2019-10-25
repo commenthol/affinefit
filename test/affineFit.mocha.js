@@ -17,7 +17,7 @@ describe('#affineFit', function () {
         return parseFloat(f.toPrecision(10), 10)
       })
       // console.log(pt, '==>', res)
-      assert.deepEqual(res, toPts[idx])
+      assert.deepStrictEqual(res, toPts[idx])
     })
   })
 })
