@@ -1,6 +1,6 @@
 {
   "name": "affinefit",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Fit an affine transformation to given points",
   "keywords": [
     "affine",
